@@ -24,6 +24,7 @@
     <module>spring-cloud-ribbon-demo</module>
     <module>spring-cloud-hystrix-demo</module>
     <module>spring-dubbo-demo-1</module>
+    <module>spring-cloud-zuul-demo</module>
   </modules>
   
   
