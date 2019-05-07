@@ -26,8 +26,8 @@ import org.springframework.security.web.csrf.CsrfTokenRepository;
 import org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository;
 import org.springframework.web.filter.OncePerRequestFilter;
 
-@Configuration
-@EnableWebSecurity
+//@Configuration
+//@EnableWebSecurity
 public class LoginConfigurer extends WebSecurityConfigurerAdapter {
 	
 	@Autowired
@@ -46,7 +46,7 @@ public class LoginConfigurer extends WebSecurityConfigurerAdapter {
         .authenticated()
         .and()   
         .formLogin()  //支持表单提交
-        .loginPage("/login2").permitAll()  //自定义登录页面
+        /*.loginPage("/login2")*/.permitAll()  //自定义登录页面
         .failureForwardUrl("/error")   //自定也错误
         .loginProcessingUrl("/login")  //提交action  也就是form表单中的action  login会调用security的登录不用自己实现
         .successForwardUrl("/hello")  //登录成功页面
