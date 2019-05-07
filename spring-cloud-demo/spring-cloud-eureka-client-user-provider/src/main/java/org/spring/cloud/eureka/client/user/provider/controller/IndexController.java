@@ -4,8 +4,8 @@ import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.spring.cloud.eureka.client.user.provider.dao.mapper.TUserInfoMapper;
-import org.spring.cloud.eureka.client.user.provider.dao.model.TUserInfo;
+import org.spring.cloud.eureka.client.user.provider.dao.model.TUser;
+import org.spring.cloud.eureka.client.user.provider.service.face.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,8 +14,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/index")
 public class IndexController {
+	/*@Autowired
+	private TUserInfoMapper TUserInfoMapper;*/
+	
 	@Autowired
-	private TUserInfoMapper TUserInfoMapper;
+	UserService UserService;
 	
 	@RequestMapping(value="/info",produces="application/json")
 	public ModelMap getServerInfo(HttpServletRequest request){
@@ -28,16 +31,16 @@ public class IndexController {
 	@RequestMapping(value="/test",produces="application/json")
 	public ModelMap test() {
 		ModelMap  resultMap = new ModelMap();
-		TUserInfo  info = new TUserInfo();
+		TUser  info = new TUser();
 		info.setCreateTime(new Date());
-		info.setLoginName("longbangying");
-		info.setPwd("1232323");
-		info.setSalt("23324343");
+		info.setLoginId("longbangying");
+		info.setPassword("1232323");
+	
 		info.setUserName("longbangying");
-		TUserInfoMapper.insertSelective(info);
+		UserService.insertSelective(info);
 		resultMap.put("data", info);
-		throw new RuntimeException("1222222");
-		//return resultMap;
+		//throw new RuntimeException("1222222");
+		return resultMap;
 	}
 	
 }

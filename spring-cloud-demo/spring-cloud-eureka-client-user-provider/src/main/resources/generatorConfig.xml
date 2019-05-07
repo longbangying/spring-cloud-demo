@@ -19,8 +19,8 @@
         </commentGenerator>
 
         <!--数据库连接信息 -->
-        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://47.104.220.175:3306/java_db?useUnicode=true" 
-        	userId="java" password="18786611964">
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://47.104.171.254:3306/user-provider?useUnicode=true" 
+        	userId="root" password="Soar18786611964">
         </jdbcConnection>
 
         <!--生成的model 包路径 -->
@@ -40,8 +40,8 @@
         </javaClientGenerator>
 
        
-	 <table schema="general" tableName="t_user_info" domainObjectName="TUserInfo"
-		    enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+	 <table schema="general" tableName="t_user" domainObjectName="TUser"
+		    enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"
 		    enableSelectByExample="true" selectByExampleQueryId="true" >
 		</table> 
     </context>
